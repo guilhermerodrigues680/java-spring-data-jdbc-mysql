@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  db:
+    container_name: mysql-estudo-spring-data-jdbc
+    image: mysql-estudo-spring-data-jdbc:1.0.0
+    ports:
+      - "13306:3306" # portaExterna:portaInterna , HOST:CONTAINER
+    expose:
+      - "3306"
+    build: mysql-container
+    environment:
+      - MYSQL_ROOT_PASSWORD=RootPassword
+      - MYSQL_DATABASE=studydb
+      - MYSQL_USER=MainUser
+      - MYSQL_PASSWORD=MainPassword
+    # volumes:
+    #   - ./my-sql-container/db-volume:/var/lib/mysql
